@@ -6,15 +6,11 @@ package com.ylz.waveform.tools;
 
 import android.annotation.SuppressLint;
 
-import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -30,12 +26,63 @@ import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @title :字符串常用操作
- * @description :字符串常用操作公共方法
- * @data:
- */
 public class StringUtil {
+
+    //获取输入框十六进制格式
+    public static String getHexString(String s) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (('0' <= c && c <= '9') || ('a' <= c && c <= 'f') ||
+                    ('A' <= c && c <= 'F')) {
+                sb.append(c);
+            }
+        }
+        if ((sb.length() % 2) != 0) {
+            sb.deleteCharAt(sb.length());
+        }
+        return sb.toString();
+    }
+
+    public static String bytesToString(byte[] bytes) {
+        final char[] hexArray = "0123456789ABCDEF".toCharArray();
+        char[] hexChars = new char[bytes.length * 2];
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < bytes.length; i++) {
+            int v = bytes[i] & 0xFF;
+            hexChars[i * 2] = hexArray[v >>> 4];
+            hexChars[i * 2 + 1] = hexArray[v & 0x0F];
+
+            sb.append(hexChars[i * 2]);
+            sb.append(hexChars[i * 2 + 1]);
+            sb.append(' ');
+        }
+        return sb.toString();
+    }
+
+
+    public static byte[] stringToBytes(String s) {
+        byte[] buf = new byte[s.length() / 2];
+        for (int i = 0; i < buf.length; i++) {
+            try {
+                buf[i] = (byte) Integer.parseInt(s.substring(i * 2, i * 2 + 2), 16);
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+        return buf;
+    }
+
+    public static String asciiToString(byte[] bytes) {
+        char[] buf = new char[bytes.length];
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < buf.length; i++) {
+            buf[i] = (char) bytes[i];
+            sb.append(buf[i]);
+        }
+        return sb.toString();
+    }
+
 
     /***************************************************************************
      * java字符串相应类型的处理
@@ -55,11 +102,6 @@ public class StringUtil {
     public static String PHONE_MACTH = "^(13[0-9]|14[0-9]|15[0|1|2|3|5|6|7|8|9]|17[0-9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$";
 
     public static String IDCARD_NUMBER = "^[1-9]\\d{5}[1-9]\\d{3}((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d{4}$";
-
-    //数字与字母合集
-    public static char[] numberAndLetterChars={'1','2','3','4','5','6','7','8','9','0',
-                        'a','b','c','d','e','f','g','h','i','j', 'k','l','m','n','o','p','q','r','s','t', 'u','v','w','x','y','z',
-                        'A','B','C','D','E','F','G','H','I','J', 'K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z'};
 
     /**
      * @param oldStr    ：原字符串
@@ -719,7 +761,7 @@ public class StringUtil {
         String num = a + "";
         /*
          * 因为方法对10-20之间的数字支持不好，比如11返回一十一，不能满足需求 所以这里单独判断
-		 */
+         */
         if (a == 10) {
             return "十";
         } else if (a > 10 && a < 20) {
@@ -893,7 +935,6 @@ public class StringUtil {
      * split("separator",'a') returns {"sep","r","tor"}
      *
      * @param src
-     * @param char
      * @return <br>
      * @函数名称：convertToUTF8
      * @功能描述：方法描述拆分字符串
@@ -925,8 +966,6 @@ public class StringUtil {
     }
 
     /**
-     * @param pStr String
-     * @return String
      * @函数名称：count
      * @功能描述：方法描述个数
      */
@@ -940,7 +979,6 @@ public class StringUtil {
     }
 
     /**
-     * @param pStr String
      * @param c    String
      * @return String
      * @函数名称：count
@@ -1013,7 +1051,6 @@ public class StringUtil {
     /**
      * 方法名称： 方法描述：
      *
-     * @param context
      * @version 1.0
      */
     public static List<Map<String, String>> compareObj(Object obj1, Object obj2)
@@ -1050,13 +1087,11 @@ public class StringUtil {
 
         }
         return clist;
-
     }
 
     /**
      * 方法名称： 方法描述：
      *
-     * @param context
      * @version 1.0
      */
     public static Object invokeMethod(Object owner, String methodName,
@@ -1080,7 +1115,6 @@ public class StringUtil {
     /**
      * 方法名称： 方法描述：
      *
-     * @param context
      * @version 1.0
      */
     public static String convertString(String s) {
@@ -1310,25 +1344,6 @@ public class StringUtil {
             e.printStackTrace();
         }
         return out.toString();
-    }
-
-    /**
-     * 把modelA对象的属性值赋值给bClass对象的属性。
-     *
-     * @param modelA
-     * @param bClass
-     * @param <T>
-     * @return
-     */
-    public static <A, T> T modelAconvertoB(A modelA, Class<T> bClass) {
-        try {
-            Gson gson = new Gson();
-            String gsonA = gson.toJson(modelA);
-            T instanceB = gson.fromJson(gsonA, bClass);
-            return instanceB;
-        } catch (Exception e) {
-            return null;
-        }
     }
 
 }
