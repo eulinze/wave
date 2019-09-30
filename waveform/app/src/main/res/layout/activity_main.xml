@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/reverse_sb_progresstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="8" />
+
+    <com.ylz.waveform.widget.VerticalSeekBar
+        android:id="@+id/vertical_Seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="450dip"
+        android:min="0" />
+
+    <TextView
+        android:id="@+id/vertical_sb_progresstext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vertical_Seekbar"
+        android:gravity="center"
+        android:text="0" />
+
+</RelativeLayout>

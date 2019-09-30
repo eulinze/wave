@@ -1,0 +1,40 @@
+<resources>
+    <dimen name="common_text_xbig">22sp</dimen>
+    <dimen name="common_text_big">18sp</dimen>
+    <dimen name="common_text_xnormal">16sp</dimen>
+    <dimen name="common_text_normal">14sp</dimen>
+    <dimen name="common_text_small">12sp</dimen>
+    <dimen name="common_text_ssmall">10sp</dimen>
+    <dimen name="common_text_xsmall">8sp</dimen>
+    <dimen name="common_text_xxsmall">6sp</dimen>
+
+    <dimen name="view_small_padding">1dp</dimen>
+    <dimen name="view_padding">6dp</dimen>
+
+    <dimen name="common_text_spacing_big">14dp</dimen>
+    <dimen name="common_text_spacing_normal">10dp</dimen>
+    <dimen name="common_text_spacing_small">8dp</dimen>
+
+    <dimen name="common_image_single_spacing_normal">6dp</dimen>
+
+
+    <dimen name="common_item_padding_xxxbig">26dp</dimen>
+    <dimen name="common_item_padding_xxbig">20dp</dimen>
+    <dimen name="common_item_padding_xbig">14dp</dimen>
+    <dimen name="common_item_padding_normal">6dp</dimen>
+    <dimen name="common_item_padding_big">10dp</dimen>
+    <dimen name="common_item_padding_small">4dp</dimen>
+    <dimen name="common_item_padding_xsmall">1dp</dimen>
+
+    <dimen name="common_item_margin_normal">12dp</dimen>
+    <dimen name="common_item_margin_big">14dp</dimen>
+    <dimen name="common_item_margin_sbig">16dp</dimen>
+    <dimen name="common_item_margin_xnormal">10dp</dimen>
+    <dimen name="common_item_margin_small">6dp</dimen>
+    <dimen name="common_item_margin_xsmall">4dp</dimen>
+
+
+    <dimen name="check_device_item_hight">48dp</dimen>
+
+    <dimen name="check_device_text_length">100dp</dimen>
+</resources>

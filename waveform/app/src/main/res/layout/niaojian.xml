@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#526AD4"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/bigger_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="12dp"
+            android:text="变大"
+            android:textColor="#ffffff"
+            android:textSize="44px" />
+
+        <TextView
+            android:id="@+id/small_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="12dp"
+            android:text="变小"
+            android:textColor="#ffffff"
+            android:textSize="44px" />
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eeeeee"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:orientation="horizontal">
+
+                    <com.ylz.waveform.widget.LineGraphicView
+                        android:id="@+id/line_graphic"
+                        android:layout_width="1000dp"
+                        android:layout_height="match_parent"
+                        android:fillViewport="true"></com.ylz.waveform.widget.LineGraphicView>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:alpha="0.6">
+
+                <ImageView
+                    android:id="@+id/top_zuo_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:alpha="0.6"
+                    android:src="@mipmap/zuo" />
+
+                <ImageView
+                    android:id="@+id/top_you_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/top_zuo_imageview"
+                    android:alpha="0.6"
+                    android:src="@mipmap/you" />
+
+                <com.ylz.waveform.widget.VerticalSeekBar
+                    android:id="@+id/vertical_Seekbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_alignParentRight="true"
+                    android:min="0" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:alpha="0.6">
+
+                <ImageView
+                    android:id="@+id/middle_zou_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:alpha="0.6"
+                    android:src="@mipmap/zuo" />
+
+                <ImageView
+                    android:id="@+id/middle_you_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/middle_zou_imageview"
+                    android:alpha="0.6"
+                    android:src="@mipmap/you" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:alpha="0.6">
+
+                <ImageView
+                    android:id="@+id/bottom_zou_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:alpha="0.6"
+                    android:src="@mipmap/zuo" />
+
+                <ImageView
+                    android:id="@+id/bottom_you_imageview"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/bottom_zou_imageview"
+                    android:alpha="0.6"
+                    android:src="@mipmap/you" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
+
+
