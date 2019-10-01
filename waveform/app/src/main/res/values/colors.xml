@@ -34,4 +34,9 @@
 
     <color name="not_selected">#aa999999</color>
     <color name="had_selected">#aa8ec220</color>
+
+
+    <color name="light_blue">#33adff</color>
+    <color name="orange">#ff7e00</color>
+    <color name="light_grey">#dadada</color>
 </resources>

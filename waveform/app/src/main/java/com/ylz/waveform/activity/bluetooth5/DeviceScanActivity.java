@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ylz.waveform.activity.bluetooth2;
+package com.ylz.waveform.activity.bluetooth5;
 
 import android.Manifest;
 import android.app.Activity;
@@ -43,7 +43,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ylz.waveform.R;
-import com.ylz.waveform.activity.bluetooth5.ShowReceiveActivity;
+import com.ylz.waveform.activity.bluetooth2.BTClient;
 
 import java.util.ArrayList;
 

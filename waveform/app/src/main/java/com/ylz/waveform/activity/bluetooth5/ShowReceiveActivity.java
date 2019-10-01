@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.ylz.waveform.R;
 import com.ylz.waveform.service.BluetoothLeService;
-import com.ylz.waveform.utils.StringUtil;
+import com.ylz.waveform.tools.StringUtil;
 
 import java.util.Timer;
 import java.util.TimerTask;

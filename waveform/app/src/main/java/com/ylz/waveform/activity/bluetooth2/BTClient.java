@@ -24,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ylz.waveform.R;
-import com.ylz.waveform.activity.DeviceListActivity;
+import com.ylz.waveform.activity.bluetooth5.DeviceListActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
