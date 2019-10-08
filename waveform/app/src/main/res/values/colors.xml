@@ -39,4 +39,14 @@
     <color name="light_blue">#33adff</color>
     <color name="orange">#ff7e00</color>
     <color name="light_grey">#dadada</color>
+
+
+    <!--presswavecore-->
+    <color name="colorGray">#aaa</color>
+    <color name="divide_color">@color/colorPrimary</color>
+    <color name="btn_normal">@color/colorGray</color>
+    <color name="btn_press">@color/colorGray</color>
+    <color name="btn_stroke">@color/colorGray</color>
+
+
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="180dp"
+    android:background="@color/colorPrimary"
+    android:padding="10dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_head"
+        />
+    <TextView
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/phone_number"
+        />
+
+</RelativeLayout>

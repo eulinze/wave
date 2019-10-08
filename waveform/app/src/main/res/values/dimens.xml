@@ -38,6 +38,8 @@
 
     <dimen name="check_device_text_length">100dp</dimen>
 
+
+    <!-- autoLogin -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="view_normal_margin">10dp</dimen>
@@ -45,4 +47,19 @@
     <dimen name="large_text_size">22sp</dimen>
     <dimen name="medium_text_size">18sp</dimen>
     <dimen name="small_text_size">14sp</dimen>
+
+    <dimen name="point_view_height">200dp</dimen>
+    <dimen name="line_view_height">200dp</dimen>
+
+    <!-- presswavecore -->
+    <dimen name="title_name_text">20sp</dimen>
+    <dimen name="pingyi_btn_size">27sp</dimen>
+    <dimen name="suofang_btn_size">27sp</dimen>
+    <dimen name="btn_margin_right">5dp</dimen>
+    <dimen name="set_btn_text_size">20sp</dimen>
+    <dimen name="sync_btn_text_size">20sp</dimen>
+    <dimen name="app_name_text_size">30sp</dimen>
+
+
+
 </resources>

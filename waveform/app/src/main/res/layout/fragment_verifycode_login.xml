@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="@string/label_phone_number"
+        android:textCursorDrawable="@drawable/edit_cursor" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_verify_code" />
+
+        <Button
+            android:id="@+id/btn_get_verify_code"
+            style="@style/MyButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_margin="0dp"
+            android:text="@string/btn_get_verify_code" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/MyButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_login" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+
+    <dbname value="Wave"/>
+    <version value="3"/>
+    <list>
+        <mapping class="com.ylz.waveform.presswavecore.model.db.LocalWave"/>
+        <mapping class="com.ylz.waveform.presswavecore.model.db.LocalWavePoint"/>
+        <mapping class="com.ylz.waveform.presswavecore.model.db.ServerWave"/>
+        <mapping class="com.ylz.waveform.presswavecore.model.db.ServerWavePoint"/>
+    </list>
+</litepal>

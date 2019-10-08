@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="绑定电话号"
+        app:navigationIcon="@drawable/ic_fanhui"
+        app:titleTextColor="@android:color/white"/>
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/label_phone_number"
+        android:layout_margin="5dp"
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <EditText
+            android:id="@+id/verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/label_verify_code"
+
+            />
+        <Button
+            android:id="@+id/btn_get_verify_code"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/btn_get_verify_code"
+            android:layout_gravity="right"
+            style="@style/MyButtonStyle"
+            android:layout_margin="0dp"
+            />
+    </FrameLayout>
+    <Button
+        android:id="@+id/btn_bind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_bind"
+        style="@style/MyButtonStyle"
+        />
+</LinearLayout>

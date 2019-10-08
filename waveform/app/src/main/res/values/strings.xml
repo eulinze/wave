@@ -38,4 +38,42 @@
     <string name="ble_need_location">Android6.0蓝牙需要开启</string>
 
 
+    //自动登录
+    <string name="weibo_auth_button">微博授权登录</string>
+    <string name="qq_auth_button">QQ授权登录</string>
+    <string name="weibosdk_demo_token_to_string_format_1">Token：%1$s \n有效期：%2$s</string>
+    <string name="weibosdk_demo_token_has_existed">Token 仍在有效期内，无需再次登录。</string>
+    <string name="label_phone_number">手机号</string>
+    <string name="label_verify_code">验证码</string>
+    <string name="btn_get_verify_code">获取验证码</string>
+    <string name="btn_bind">绑定</string>
+    <string name="btn_login_out">退出</string>
+    <string name="btn_get_user">获取用户信息</string>
+    <string name="btn_login">登录</string>
+    <string name="label_password">密码</string>
+    <string name="label_radio_verifycode">验证码登录</string>
+    <string name="label_radio_password">密码登录\u3000</string>
+    <string name="label_old_password">旧密码</string>
+    <string name="label_new_password">新密码</string>
+    <string name="btn_modify_password">修改密码</string>
+    <string name="btn_to_modify_password">修改密码</string>
+    <string name="btn_set_password">设置密码</string>
+    <string name="okhttpfailed">网络错误</string>
+    <string name="open_auth_text">———第三方登录———</string>
+
+    <!-- presswavecore -->
+    <string name="blue_point_view_wrap_title_text">蓝牙上传数据点</string>
+    <string name="save_point_btn">保存</string>
+    <string name="clear_point_btn">清屏</string>
+    <string name="dialog_title_text">保存</string>
+    <string name="point_name_hint">请输入名称</string>
+    <string name="remark_hint">请输入备注</string>
+    <string name="save_text">保存</string>
+    <string name="cancel_text">取消</string>
+    <string name="server_data_download_btn">下载/更新</string>
+    <string name="compare_line_btn">对比</string>
+    <string name="upload_text">上传标准波</string>
+    <string name="no_more_text">没有更多了</string>
+    <string name="has_more_text">玩命加载中</string>
+
 </resources>
