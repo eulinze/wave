@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.ylz.waveform.R;
 import com.ylz.waveform.presswavecore.utils.ToastUtils;
 

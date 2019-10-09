@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGray">
+    android:background="@color/colorGray"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:id="@+id/wrap_head"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        
+        android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/title_name_text"/>
+            android:textSize="@dimen/title_name_text" />
     </RelativeLayout>
-    <com.ylz.waveform.activity.presswave.widget.PointView
+
+    <com.ylz.waveform.presswavecore.widget.PointView
         android:id="@+id/point_view"
         android:layout_width="match_parent"
         android:layout_height="@dimen/point_view_height" />
+
     <RelativeLayout
         android:id="@+id/wrap_foot"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
     </RelativeLayout>
 </LinearLayout>

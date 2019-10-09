@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity  implements FragmentCallback
     private BluePointViewWrap bluePointViewWrap;
     private ViewPager viewPager;
     private PagerTabStrip pagerTabStrip;
-    private String name = "1";
+    private String name = "";
     //默认模糊搜索
     private int searchPreciseKey = SearchPreciseEnum.FUZZY.getKey();
     private TabDataSourceEnum witchTab = TabDataSourceEnum.LOCAL_DATA;
@@ -116,7 +116,6 @@ public class MainActivity extends AppCompatActivity  implements FragmentCallback
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-
             }
 
             @Override
@@ -128,7 +127,6 @@ public class MainActivity extends AppCompatActivity  implements FragmentCallback
 
             @Override
             public void onPageScrollStateChanged(int i) {
-
             }
         });
         Intent intent = new Intent(this, BlueService.class);
