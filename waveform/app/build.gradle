@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -21,6 +20,11 @@ android {
             dirs "libs" // aar目录
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -31,7 +35,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation files('libs/open_sdk_r6140_lite.jar')
-    implementation files('libs/Baidu_Mtj_3.7.4.9.jar')
     implementation files('libs/boan-2.1.1.jar')
     implementation files('libs/commons-beanutils-1.8.3.jar')
     implementation files('libs/commons-net-3.6.jar')
@@ -50,4 +53,6 @@ dependencies {
     // NavigationView依赖库
     api 'com.android.support:design:26.0.0'
     api 'org.litepal.android:core:1.4.1'
+    implementation files('libs/Baidu_Mtj_android_3.9.5.8.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
 }

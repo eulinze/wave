@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyApplication</string>
+    <string name="app_name">波形图谱</string>
 
     <!--ble-->
     <string name="ble_not_supported">BLE is not supported</string>

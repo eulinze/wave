@@ -16,17 +16,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-
 import com.ylz.waveform.R;
-import com.ylz.waveform.activity.bluetooth5.BleSppActivityForTest;
-import com.ylz.waveform.activity.bluetooth5.ShowReceiveActivity;
 import com.ylz.waveform.adapter.DeviceAdapter;
 import com.ylz.waveform.bean.DeviceBean;
 import com.ylz.waveform.tools.StringUtil;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static com.ylz.waveform.application.App.EXTRAS_DEVICE_ADDRESS;
 import static com.ylz.waveform.application.App.EXTRAS_DEVICE_NAME;
 
