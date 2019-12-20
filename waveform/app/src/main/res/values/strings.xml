@@ -76,4 +76,14 @@
     <string name="no_more_text">没有更多了</string>
     <string name="has_more_text">玩命加载中</string>
 
+    <string name="please_entry_login_user_name">请输入用户名</string>
+    <string name="please_entry_login_user_pass">请输入密码</string>
+    <string name="please_entry_login_user_certainpass">请输入确认密码</string>
+    <string name="please_entry_phone_number">请输手机号</string>
+
+    <string name="login">登录</string>
+    <string name="regist">注册</string>
+    <string name="certain">确定</string>
+    <string name="back">返回</string>
+
 </resources>

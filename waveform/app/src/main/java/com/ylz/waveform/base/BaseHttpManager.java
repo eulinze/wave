@@ -28,9 +28,10 @@ public  class BaseHttpManager {
                 @Override
                 public void getDataSuccess(BaseBean baseBean) {
                     if (isList){
-                        commonRefreshViewCallback.refreshView(parseString2List(baseBean.getData().toString(), classOfT));
+                        commonRefreshViewCallback.refreshView(parseString2List(baseBean.getResultData().toString(), classOfT));
                     }else{
-                        commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getData().toString(), GsonTools.wrap(classOfT)));
+                        String myJson=   GsonTools.getGson().toJson(baseBean.getResultData());//将gson转化为json
+                        commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(myJson, GsonTools.wrap(classOfT)));
                     }
                 }
                 @Override
@@ -60,7 +61,7 @@ public  class BaseHttpManager {
             ThreadPoolTools.getInstance().runThread(url, key, str, f, new RequestCallback() {
                 @Override
                 public void getDataSuccess(BaseBean baseBean) {
-                        commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getData().toString(), GsonTools.wrap(classOfT)));
+                        commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getResultData().toString(), GsonTools.wrap(classOfT)));
                 }
                 @Override
                 public void getDataFailTimeOut() {
@@ -78,12 +79,12 @@ public  class BaseHttpManager {
         }
     }
 
-    public static <T> void commonUpLoadFtpImage( File f, final CommonRefreshViewCallback commonRefreshViewCallback, final Class<T> classOfT) {
+    public static <T> void commonUpLoadFtpImage(File f, final CommonRefreshViewCallback commonRefreshViewCallback, final Class<T> classOfT) {
         try {
             ThreadPoolTools.getInstance().runThread( f, new RequestCallback() {
                 @Override
                 public void getDataSuccess(BaseBean baseBean) {
-                    commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getData().toString(), GsonTools.wrap(classOfT)));
+                    commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getResultData().toString(), GsonTools.wrap(classOfT)));
                 }
                 @Override
                 public void getDataFailTimeOut() {
@@ -101,15 +102,15 @@ public  class BaseHttpManager {
         }
     }
 
-    public static <T> void commonGetData(String url, String key, String str,final boolean isList, final Class<T> classOfT, final CommonRefreshViewCallback commonRefreshViewCallback) {
+    public static <T> void commonGetData(String url, String key, String str, final boolean isList, final Class<T> classOfT, final CommonRefreshViewCallback commonRefreshViewCallback) {
         try {
             ThreadPoolTools.getInstance().runThreadStream(url, key, str, new RequestCallback() {
                 @Override
                 public void getDataSuccess(BaseBean baseBean) {
                     if (isList){
-                        commonRefreshViewCallback.refreshView(parseString2List(baseBean.getData().toString(), classOfT));
+                        commonRefreshViewCallback.refreshView(parseString2List(baseBean.getResultData().toString(), classOfT));
                     }else {
-                        commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getData().toString(), GsonTools.wrap(classOfT)));
+                        commonRefreshViewCallback.refreshView(GsonTools.getGson().fromJson(baseBean.getResultData().toString(), GsonTools.wrap(classOfT)));
                     }
                 }
                 @Override
@@ -128,7 +129,7 @@ public  class BaseHttpManager {
         }
     }
 
-    public   static <T>  List<T> parseString2List(String json,Class clazz) {
+    public   static <T> List<T> parseString2List(String json, Class clazz) {
         Type type = new ParameterizedTypeImpl(clazz);
         List<T> list =  new Gson().fromJson(json, type);
         return list;

@@ -1,19 +1,14 @@
 package com.ylz.waveform.tools;
 
-
 import com.google.gson.Gson;
 import com.ylz.waveform.bean.BaseBean;
 import com.ylz.waveform.callback.httpcallback.RequestCallback;
-
-import org.nutz.json.Json;
-
 import java.io.File;
 import java.io.InputStream;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
 
 /**
  * Created by Administrator on 2017/8/29.
@@ -61,10 +56,10 @@ public class ThreadPoolTools {
 //                    BaseBean baseBean1 = Json.fromJson(BaseBean.class, resultStr1);
                     Gson gson = new Gson();
                     BaseBean baseBean = gson.fromJson(resultStr1,BaseBean.class);
-                    if (StringUtil.eq(baseBean.getErrorCode(), "0")) {
+                    if (StringUtil.eq(baseBean.getResultCode(), "0000")) {
                         requestCallback.getDataSuccess(baseBean);
                     } else {
-                        requestCallback.getDataFail(baseBean.getErrorMessage());
+                        requestCallback.getDataFail(baseBean.getResultMsg());
                     }
                 } catch (SocketTimeoutException e) {
                     e.printStackTrace();
@@ -87,10 +82,10 @@ public class ThreadPoolTools {
                 try {
                     String resultStr = HttpTools.getInstance().postFile(url, key, json, f);
                     BaseBean baseBean = GsonTools.getGson().fromJson(resultStr,BaseBean.class);
-                    if (StringUtil.eq(baseBean.getErrorCode(), "0")) {
+                    if (StringUtil.eq(baseBean.getResultCode(), "0")) {
                         requestCallback.getDataSuccess(baseBean);
                     } else {
-                        requestCallback.getDataFail(baseBean.getErrorMessage());
+                        requestCallback.getDataFail(baseBean.getResultMsg());
                     }
                 } catch (SocketTimeoutException e) {
                     //Log.e("-------------------", "fail " + new Date().getTime() + "  " + e.getMessage());
@@ -109,7 +104,7 @@ public class ThreadPoolTools {
         });
     }
 
-    public  void runThread( final File f, final RequestCallback requestCallback) {
+    public  void runThread(final File f, final RequestCallback requestCallback) {
         UploadImageThreadPoolManager.getInstance().execute(new Runnable() {
             @Override
             public void run() {
@@ -124,7 +119,7 @@ public class ThreadPoolTools {
                     } else {
                         String resultStr = "{\"code\":\"1\",\"message\":\"上传失败\",\"data\":\" \"}";
                         BaseBean baseBean = GsonTools.getGson().fromJson(resultStr,BaseBean.class);
-                        requestCallback.getDataFail(baseBean.getErrorMessage());
+                        requestCallback.getDataFail(baseBean.getResultMsg());
                     }
                 } catch (SocketTimeoutException e) {
                     e.printStackTrace();
@@ -140,7 +135,7 @@ public class ThreadPoolTools {
                     String resultStr = "{\"code\":\"1\",\"message\":\"上传失败\",\"data\":\" \"}";
 //                    //Log.e("postImgEnd++++++++",new Date(System.currentTimeMillis()).toString());
                     BaseBean baseBean = GsonTools.getGson().fromJson(resultStr,BaseBean.class);
-                    requestCallback.getDataFail(baseBean.getErrorMessage());
+                    requestCallback.getDataFail(baseBean.getResultMsg());
                 }
             }
         });
@@ -157,10 +152,10 @@ public class ThreadPoolTools {
 //                    Log.e("postEnd++++++++",new Date(System.currentTimeMillis()).toString());
                     BaseBean baseBean = GsonTools.getGson().fromJson(jsonStr,BaseBean.class);
                     //Log.e("runThreadStream", "runThreadStream--success"+jsonStr);
-                    if (StringUtil.eq(baseBean.getErrorCode(), "0")) {
+                    if (StringUtil.eq(baseBean.getResultCode(), "0")) {
                         callback.getDataSuccess(baseBean);
                     } else {
-                        callback.getDataFail(baseBean.getErrorMessage());
+                        callback.getDataFail(baseBean.getResultMsg());
                     }
                 } catch (SocketTimeoutException e) {
                     e.printStackTrace();

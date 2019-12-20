@@ -8,8 +8,9 @@ public class NetApi {
 
 
 
+
     //开发Ftp服务地址
-    public static final String COMMON_MAIN = "http://192.168.1.111:8080/DailyFive/";
+    public static final String COMMON_MAIN = "http://192.168.82.8:8080/jiqingyuan/";
     public static final String FTP_URL = "172.16.30.203";
     public static final int FTP_PORT = 21;
     public static final String FTP_USER = "admin";//adminstrator
@@ -19,10 +20,13 @@ public class NetApi {
 
 
     //获取登录信息
-    public static final String LOGIN_URL = COMMON_MAIN + "personal/getPersonal";
+    public static final String LOGIN_URL = COMMON_MAIN + "personal/getPersonalFromPhone.action";
 
     //修改密码
-    public static final String PWD_URL = COMMON_MAIN + "user/update/passwd";
+    public static final String REGIST_URL = COMMON_MAIN + "personal/addPersonalFromPhone.action";
+
+    //修改密码
+    public static final String PWD_URL = COMMON_MAIN + "user/update/passwd.action";
 
     //添加任务信息
     public static final String ADD_TASK_URL = COMMON_MAIN + "task/addTaskBean";

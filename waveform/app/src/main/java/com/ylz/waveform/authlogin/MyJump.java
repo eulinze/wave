@@ -3,6 +3,8 @@ package com.ylz.waveform.authlogin;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.ylz.waveform.activity.LoginActivity;
+
 public class MyJump {
     public final static String ACTION_LOGIN_SUCCESS = "com.ylz.waveform.login.loginSuccess";
     public static void jumpToLogin(Activity activity){
