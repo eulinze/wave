@@ -117,9 +117,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:text="00"
             android:layout_marginLeft="@dimen/common_item_margin_small"
             android:layout_marginRight="@dimen/common_item_margin_small"
-            android:text="00"
             android:textSize="@dimen/common_text_big" />
 
         <ImageView
@@ -131,22 +131,27 @@
 
     </LinearLayout>
 
-
-    <TextView
-        android:id="@+id/rev_tv"
+    <ScrollView
+        android:id="@+id/rev_sv"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/common_item_margin_small"
-        android:layout_marginRight="@dimen/common_item_margin_small"
-        android:text="接收到的数据"
-        android:padding="10dp"
-        android:textSize="@dimen/common_text_big" />
+        android:layout_weight="1"
 
+        >
+
+        <TextView
+            android:id="@+id/rev_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+
+    </ScrollView>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+
         android:orientation="horizontal">
 
         <EditText

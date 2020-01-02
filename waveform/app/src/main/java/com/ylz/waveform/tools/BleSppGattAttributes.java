@@ -21,12 +21,21 @@ package com.ylz.waveform.tools;
  */
 public class BleSppGattAttributes {
 
-    public static String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
+//    public static String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
+//
+//    public static String BLE_SPP_Service = "0000fff0-0000-1000-8000-00805f9b34fb";
+//    public static String BLE_SPP_Notify_Characteristic = "0000fff4-0000-1000-8000-00805f9b34fb";
+//    public static String  BLE_SPP_Read_Characteristic = "0000fff3-0000-1000-8000-00805f9b34fb";
+//    public static String  BLE_SPP_Write_Characteristic = "0000fff3-0000-1000-8000-00805f9b34fb";
+//    public static String  BLE_SPP_AT_Characteristic = "00002A37-0000-1000-8000-00805f9b34fb";
 
-    public static String BLE_SPP_Service = "0000180D-0000-1000-8000-00805f9b34fb";
-    public static String BLE_SPP_Notify_Characteristic = "00002A37-0000-1000-8000-00805f9b34fb";
-    public static String  BLE_SPP_Read_Characteristic = "00002A38-0000-1000-8000-00805f9b34fb";
-//    public static String  BLE_SPP_Write_Characteristic = "00002A38-0000-1000-8000-00805f9b34fb";
-    public static String  BLE_SPP_AT_Characteristic = "00002A37-0000-1000-8000-00805f9b34fb";
+
+    public static String CLIENT_CHARACTERISTIC_CONFIG = "0003cdd1-0000-1000-8000-00805f9b0131";
+
+    public static String BLE_SPP_Service = "0003cdd0-0000-1000-8000-00805f9b0131";
+    public static String BLE_SPP_Notify_Characteristic = "0003cdd1-0000-1000-8000-00805f9b0131";
+    public static String  BLE_SPP_Read_Characteristic = "0003cdd2-0000-1000-8000-00805f9b0131";
+    public static String  BLE_SPP_Write_Characteristic = "0003cdd2-0000-1000-8000-00805f9b0131";
+    public static String  BLE_SPP_AT_Characteristic = "0003cdd2-0000-1000-8000-00805f9b0131";
 
 }
