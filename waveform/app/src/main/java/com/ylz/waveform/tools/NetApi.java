@@ -7,8 +7,6 @@ package com.ylz.waveform.tools;
 public class NetApi {
 
 
-
-
     //开发Ftp服务地址
     public static final String COMMON_MAIN = "http://192.168.82.8:8080/jiqingyuan/";
     public static final String FTP_URL = "172.16.30.203";

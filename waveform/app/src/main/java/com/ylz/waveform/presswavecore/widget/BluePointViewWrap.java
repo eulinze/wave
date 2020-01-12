@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ylz.waveform.activity.bluetooth103.BluetoothLeService;
 import com.ylz.waveform.authlogin.SharedPreferenceUtils;
 import com.ylz.waveform.authlogin.User;
 import com.ylz.waveform.presswavecore.Config;
@@ -41,6 +42,11 @@ public class BluePointViewWrap extends LinearLayout implements SavePointDialog.S
     private SavePointDialog dialog;
     private Context context;
     private SharedPreferenceUtils sharedPreferenceUtils;
+
+    private String mDeviceAddress;
+    private BluetoothLeService mBluetoothLeService;
+    private boolean mConnected = false;
+
     public BluePointViewWrap(Context context) {
         super(context);
     }
@@ -51,11 +57,11 @@ public class BluePointViewWrap extends LinearLayout implements SavePointDialog.S
         sharedPreferenceUtils = new SharedPreferenceUtils(context);
         View view = LayoutInflater.from(context).inflate(R.layout.blue_point_view_wrap,this);
 
-         pointView = view.findViewById(R.id.point_surface_view);
-        for(int i=0;i<100;i++){
-            List<LocalWavePoint> localWavePointList = pointView.generatePointList();
-            pointView.upload(localWavePointList);
-        }
+        pointView = view.findViewById(R.id.point_surface_view);
+//        for(int i=0;i<100;i++){
+//            List<LocalWavePoint> localWavePointList = pointView.generatePointList();
+//            pointView.upload(localWavePointList);
+//        }
         Button savePointBtn = view.findViewById(R.id.save_point_btn);
 
         savePointBtn.setOnClickListener(new OnClickListener() {
@@ -75,6 +81,10 @@ public class BluePointViewWrap extends LinearLayout implements SavePointDialog.S
             }
         });
 
+    }
+
+    public PointSurfaceView getPointView(){
+        return pointView;
     }
 
     public BluePointViewWrap(Context context,  AttributeSet attrs, int defStyleAttr) {

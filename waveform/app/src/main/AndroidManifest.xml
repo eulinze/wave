@@ -157,6 +157,11 @@
 
         <activity android:name=".activity.bluetooth103.BleSppActivityForTest"></activity>
         <activity android:name=".activity.bluetooth103.ShowReceiveActivity"></activity>
+        <activity android:name=".activity.bluetooth103.ShowReceiveViewActivity"></activity>
+
+        <activity android:name=".activity.bluetooth103.ShowViewActivity"
+            android:theme="@style/Theme.Design.NoActionBar" ></activity>
+
 
         <service
             android:name=".activity.bluetooth103.BluetoothLeService"

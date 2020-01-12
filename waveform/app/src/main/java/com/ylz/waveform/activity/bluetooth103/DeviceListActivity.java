@@ -96,13 +96,13 @@ public class DeviceListActivity extends Activity {
                 String address = mDeviceAdapter.getItem(position).getAddress();
                 // 设置返回数据
                 Intent intent = new Intent();
-                intent.setClass(DeviceListActivity.this, ShowReceiveActivity.class);
+                intent.setClass(DeviceListActivity.this, ShowReceiveViewActivity.class);
                 // 设置返回数据
                 intent.putExtra(EXTRAS_DEVICE_NAME, name);
                 intent.putExtra(EXTRAS_DEVICE_ADDRESS, address);
                 startActivity(intent);
                 finish();
-                return false;
+                return true;
             }
         });
 
